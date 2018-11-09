@@ -45,7 +45,7 @@ before_test:
   - cmd: echo import holoviews as hv;hv.config(style_17=True);hv.config.warn_options_call=True > holoviews.rc
 
 test_script:
-  - cmd: nosetests -v --with-doctest --with-coverage --cover-package=holoviews
+  - cmd: nosetests -v
 
 on_success:
   # Could run coveralls here but will leave that to travis tests
