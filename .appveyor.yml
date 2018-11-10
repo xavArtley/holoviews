@@ -16,6 +16,7 @@ init:
   - cmd: echo %path%
 
 install:
+  - cinst imagemagick
   - cmd: conda config --set always_yes yes --set changeps1 no
   - cmd: conda update -q conda
   - cmd: conda info -a
