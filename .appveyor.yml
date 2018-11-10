@@ -23,7 +23,6 @@ install:
   - cmd: conda env create -q -f environment.yml
   - cmd: git clone https://github.com/ioam/holoviews-data.git -b reference_data ./doc/reference_data
   - cmd: activate holoviews
-  - cmd: conda install phantomjs
   - cmd: python setup.py develop
 
 before_test:
