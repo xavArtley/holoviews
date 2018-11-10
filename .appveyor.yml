@@ -26,6 +26,9 @@ install:
   - cmd: python setup.py develop
 
 before_test:
+  - cmd: for /f %%i in ('python -c "import matplotlib; print(matplotlib.matplotlib_fname())"') do set matplotlibrc=%%i
+  - cmd: 'echo backend : Agg > %matplotlibrc%'
+  - cmd: python -c "import matplotlib; print(matplotlib.get_backend())"
   - cmd: flake8 --ignore=E,W,F999,F405 holoviews
   - cmd: echo import holoviews as hv;hv.config(style_17=True);hv.config.warn_options_call=True > holoviews.rc
 
